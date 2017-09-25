@@ -1,0 +1,25 @@
+{{#each album as |album|}}
+
+
+  <ul data-id="{{album.id}}">
+    <li><small>Title: {{album.title}}</small></li>
+    {{#if album.artist}}
+    <li>{{album.artist}}</li>
+    {{else}}
+      No artist.
+    {{/if}}
+    {{#if album.genre}}
+    <li>{{album.genre}}</li>
+    {{else}}
+      No genre.
+    {{/if}}
+    {{#if album.year}}
+    <li>{{album.year}}</li>
+    {{else}}
+      No year.
+    {{/if}}
+    <li><button class="remove-album">Remove</button></li>
+  </ul>
+
+
+{{/each}}
