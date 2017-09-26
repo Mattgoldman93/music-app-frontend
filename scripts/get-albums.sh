@@ -1,1 +1,1 @@
-curl --include --request GET https://wdi-my-library.herokuapp.com/books
+curl --include --request GET https://young-fjord-19893.herokuapp.com/albums

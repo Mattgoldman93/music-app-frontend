@@ -1,25 +1,41 @@
-{{#each album as |album|}}
-
-
-  <ul data-id="{{album.id}}">
-    <li><small>Title: {{album.title}}</small></li>
-    {{#if album.artist}}
-    <li>{{album.artist}}</li>
-    {{else}}
-      No artist.
-    {{/if}}
-    {{#if album.genre}}
-    <li>{{album.genre}}</li>
-    {{else}}
-      No genre.
-    {{/if}}
-    {{#if album.year}}
-    <li>{{album.year}}</li>
-    {{else}}
-      No year.
-    {{/if}}
-    <li><button class="remove-album">Remove</button></li>
-  </ul>
-
-
-{{/each}}
+<h1>Albums</h1>
+<table class="table table-striped table-inverse">
+  <thead class="thead-inverse">
+  <tr>
+  <th>ID</th>
+  <th>Title</th>
+  <th>Artist</th>
+  <th>Genre</th>
+  <th>Year</th>
+  </tr>
+</thead>
+  <tbody>
+    {{#each albums as |album|}}
+      <tr>
+        <td data-id="{{album.id}}">{{album.id}}</td>
+        <td>{{album.title}}</td>
+        <td>
+          {{#if album.artist}}
+            {{album.artist}}
+          {{else}}
+            No artist.
+          {{/if}}
+        </td>
+        <td>
+          {{#if album.genre}}
+            {{album.genre}}
+          {{else}}
+            No genre.
+          {{/if}}
+        </td>
+        <td>
+          {{#if album.year}}
+            {{album.year}}
+          {{else}}
+            No year.
+          {{/if}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

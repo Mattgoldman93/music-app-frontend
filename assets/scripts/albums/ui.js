@@ -4,17 +4,15 @@ const showAlbumsTemplate = require('../templates/album-listing.handlebars')
 
 const getAlbumsSuccess = (data) => {
   console.log(data)
+  console.log(data.albums)
   const showAlbumsHtml = showAlbumsTemplate({ albums: data.albums })
   $('.content').append(showAlbumsHtml)
-  $('.remove-album').on('click', function () {
-    if (confirm('Are you sure you want to delete this album') === true) {
-      $(this).parents('ul').hide()
-    }
-  })
+  $('#getAlbumsButton').attr('disabled', 'disabled')
 }
 
 const clearAlbums = () => {
   $('.content').empty()
+  $('#getAlbumsButton').attr('disabled', false)
 }
 
 const failure = (error) => {

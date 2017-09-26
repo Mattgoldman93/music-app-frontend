@@ -1,11 +1,16 @@
 'use strict'
 
-const app = require('../app.js')
+const store = require('../store.js')
+const config = require('../config')
 
 const getAlbums = function () {
   return $.ajax({
-    url: app.host + '/albums',
-    method: 'GET'
+    url: config.apiOrigin + '/albums',
+    method: 'GET',
+    contentType: 'application/json',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 

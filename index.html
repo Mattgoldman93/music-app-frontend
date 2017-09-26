@@ -11,53 +11,115 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+
     <body class="container-fluid">
-      <section class="modal-button">
-          <!-- Trigger/Open The Modal -->
-          <button id="myBtn" class='btn btn-primary'>Options</button>
-    <!-- The Modal -->
-          <div id="myModal" class="modal">
-          <!-- Modal content -->
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <p id='message'></p>
-              <form id="sign-up" class='secondary-hide'>
-                <fieldset>
-                  <h2>Sign up!</h2>
-                  <hr>
-                  <input type="text" name="credentials[email]" placeholder="Input email">
-                  <input type="password" name="credentials[password]" placeholder="Input password">
                   <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-                 <button class="btn btn-success" type="submit" name="submit" >Sign up! </button>
-                </fieldset>
-              </form>
-              <h2 class='secondary-hide'>Sign In</h2>
-              <hr>
-              <p id="siMessage"></p>
-              <form id="sign-in" class='secondary-hide'>
-                <input type="text" name="credentials[email]" placeholder="Input email">
-                <input type="password" name="credentials[password]" placeholder="Input password">
-                <button type="submit" class="btn btn-success">Submit</button>
-              </form>
-              <h2 class='initial-hide'>Change Password</h2>
-              <hr>
-              <p id="cpwMessage"></p>
-              <form id="change-password" class='initial-hide'>
-                <input type="password" name="passwords[old]" placeholder="Input old password">
-                <input type="password" name="passwords[new]" placeholder="Input new password">
-                <button type="submit" class="btn btn-warning">Submit</button>
-              </form>
-              <form id="sign-out" class='initial-hide'>
-              <button type="submit" class="btn btn-danger">Sign out</button>
-              <p id="soMessage"></p>
-              </form>
-            </div>
-          </div>
-        </section>
+      <h1 class="title">Records Record</h1>
+      <p id='message'></p>
+      <form id="sign-up" class='secondary-hide'>
+        <fieldset>
+          <h5>Sign up</h5>
+
+          <input type="text" name="credentials[email]" placeholder="Input email">
+          <input type="password" name="credentials[password]" placeholder="Input password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+         <button class="btn btn-success" type="submit" name="submit" >Sign up! </button>
+        </fieldset>
+      </form>
+      <h5 class='secondary-hide'>Sign In</h5>
+
+      <p id="siMessage"></p>
+      <form id="sign-in" class='secondary-hide'>
+        <input type="text" name="credentials[email]" placeholder="Input email">
+        <input type="password" name="credentials[password]" placeholder="Input password">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+      <h5 class='initial-hide'>Change Password</h5>
+
+      <p id="cpwMessage"></p>
+      <form id="change-password" class='initial-hide'>
+        <input type="password" name="passwords[old]" placeholder="Input old password">
+        <input type="password" name="passwords[new]" placeholder="Input new password">
+        <button type="submit" class="btn btn-warning">Submit</button>
+      </form>
+      <form id="sign-out" class='initial-hide'>
+      <button type="submit" class="btn btn-danger">Sign out</button>
+      <p id="soMessage"></p>
+      </form>
+
+        <br>
+
+      <div class="initial-hide">
+
       <button id="getAlbumsButton" class="btn btn-default">Your Albums.</button>
       <button id="clearAlbumsButton" class="btn btn-default">Clear Albums.</button>
+
       <div id="content" class="content">
       </div>
+
+      <br>
+
+      <button id="remove-album" class="btn btn-default">Remove an Album</button>
+      <button id="add-album" class="btn btn-default">Add a new Album</button>
+      <button id="edit-album" class="btn btn-default">Update an Album</button>
+
+      <br>
+
+      <form id="destroy-album" class="table-hide">
+        <div>
+          <label for="id">Album ID</label>
+          <input type="number" id="delete-id">
+        </div>
+        <div class="button">
+          <button class="btn" type="submit" id="delete-album">Remove album</button>
+        </div>
+      </form>
+
+      <form id="new-album" class="table-hide">
+        <div>
+          <label for="title">Title:</label>
+          <input type="text" id="create-title">
+        </div>
+        <div>
+          <label for="artist">Artist:</label>
+          <input type="text" id="create-artist">
+        </div>
+        <div>
+          <label for="genre">Genre:</label>
+          <input type="text" id="create-genre">
+        </div>
+        <div>
+          <label for="year">Year:</label>
+          <input type="number" id="create-year">
+        </div>
+        <div class="button">
+          <button class="btn" type="submit" id="create-album">Add album</button>
+        </div>
+      </form>
+
+      <form id="update-album" class="table-hide">
+        <div>
+          <label for="title">Title:</label>
+          <input type="text" id="update-title">
+        </div>
+        <div>
+          <label for="artist">Artist:</label>
+          <input type="text" id="update-artist">
+        </div>
+        <div>
+          <label for="genre">Genre:</label>
+          <input type="text" id="update-genre">
+        </div>
+        <div>
+          <label for="year">Year:</label>
+          <input type="number" id="update-year">
+        </div>
+        <div class="button">
+          <button class="btn" type="submit" id="patch-album">Update album</button>
+        </div>
+      </form>
+
+      </div>
+
     </body>
   </html>
-</html>
