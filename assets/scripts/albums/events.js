@@ -15,54 +15,61 @@ const onClearAlbums = (event) => {
   event.preventDefault()
   ui.clearAlbums()
 }
+
 // submit form buttons
 const onDeleteAlbum = function (event) {
-  event.preventDefault()
   const data = getFormFields(this)
   console.log(data)
+  event.preventDefault()
   api.deleteAlbum(data)
+    .then(ui.deleteAlbumSuccess)
+    .catch(ui.failure)
 }
 const onCreateAlbum = function (event) {
-  event.preventDefault()
+  console.log(event)
   const data = getFormFields(this)
   console.log(data)
-  api.deleteAlbum(data)
+  event.preventDefault()
+  api.createAlbum(data)
+    .then(ui.createAlbumSuccess)
+    .catch(ui.failure)
 }
 const onUpdateAlbum = function (event) {
-  event.preventDefault()
+  console.log(event)
   const data = getFormFields(this)
   console.log(data)
-  api.deleteAlbum(data)
+  event.preventDefault()
+  api.updateAlbum(data)
+    .then(ui.updateAlbumSuccess)
+    .catch(ui.failure)
 }
+
 // buttons to reveal forms
-const onRemoveAlbum = function () {
-  event.preventDefault()
-  $('#destroy-album').show()
-  $('#new-album').hide()
-  $('#patch-album').hide()
-  $('#delete-album').on('submit', onDeleteAlbum)
+const showFieldDelete = function () {
+  $('#delete-album').show()
+  $('#create-album').hide()
+  $('#update-album').hide()
 }
-const onAddAlbum = function () {
-  event.preventDefault()
-  $('#new-album').show()
-  $('#patch-album').hide()
-  $('#destroy-album').hide()
-  $('#create-album').on('submit', onCreateAlbum)
+const showFieldCreate = function () {
+  $('#create-album').show()
+  $('#update-album').hide()
+  $('#delete-album').hide()
 }
-const onEditAlbum = function () {
-  event.preventDefault()
-  $('#patch-album').show()
-  $('#destroy-album').hide()
-  $('#new-album').hide()
-  $('#update-album').on('submit', onUpdateAlbum)
+const showFieldUpdate = function () {
+  $('#update-album').show()
+  $('#delete-album').hide()
+  $('#create-album').hide()
 }
 
 const addHandlers = () => {
   $('#getAlbumsButton').on('click', onGetAlbums)
   $('#clearAlbumsButton').on('click', onClearAlbums)
-  $('#remove-album').on('click', onRemoveAlbum)
-  $('#add-album').on('click', onAddAlbum)
-  $('#edit-album').on('click', onEditAlbum)
+  $('#show-field-delete').on('click', showFieldDelete)
+  $('#show-field-create').on('click', showFieldCreate)
+  $('#show-field-update').on('click', showFieldUpdate)
+  $('#update-album').on('submit', onUpdateAlbum)
+  $('#create-album').on('submit', onCreateAlbum)
+  $('#delete-album').on('submit', onDeleteAlbum)
 }
 
 module.exports = {
