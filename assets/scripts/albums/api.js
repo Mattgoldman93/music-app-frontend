@@ -29,7 +29,6 @@ const createAlbum = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/albums/',
     method: 'POST',
-    contentType: 'application/json',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
@@ -42,7 +41,6 @@ const updateAlbum = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/albums/' + data.album.id,
     method: 'PATCH',
-    contentType: 'application/json',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },

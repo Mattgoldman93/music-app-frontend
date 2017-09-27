@@ -16,22 +16,20 @@ const clearAlbums = () => {
 }
 
 const deleteAlbumSuccess = (data) => {
-  console.log(data)
-  console.log(data.album)
   $('#delete-album').hide()
   clearAlbums()
 }
 
 const createAlbumSuccess = (data) => {
   console.log(data)
-  console.log(data.album)
+  console.log(data.albums)
   $('#create-album').hide()
   clearAlbums()
 }
 
 const updateAlbumSuccess = (data) => {
   console.log(data)
-  console.log(data.album)
+  console.log(data.albums)
   $('#update-album').hide()
   clearAlbums()
 }
