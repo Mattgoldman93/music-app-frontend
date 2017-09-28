@@ -31,6 +31,7 @@ const signOutSuccess = function (data) {
   $('#message').show()
   $('#message').text('Signed out!')
   $('.initial-hide').hide()
+  $('.table-hide').hide()
   $('.secondary-hide').show()
   $('#message').fadeOut(1800)
   store.user = null
