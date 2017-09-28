@@ -5,7 +5,7 @@
 [here](https://young-fjord-19893.herokuapp.com/) -- Note: This is is where the api and database are hosted. There is no UI.
 
 ### Deployed front-end:
-[here](https://github.com/Mattgoldman93/music-app-frontend)-- This is the  user-facing component of the app.
+[here](https://mattgoldman93.github.io/music-app-frontend/)-- This is the  user-facing component of the app.
 
 ### User stories:
 
