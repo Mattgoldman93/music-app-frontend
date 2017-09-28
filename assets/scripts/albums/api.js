@@ -14,7 +14,6 @@ const getAlbums = function () {
   })
 }
 const deleteAlbum = function (data) {
-  console.log('api reached' + data)
   return $.ajax({
     url: config.apiOrigin + '/albums/' + data.album.id,
     method: 'DELETE',
@@ -25,7 +24,6 @@ const deleteAlbum = function (data) {
   })
 }
 const createAlbum = function (data) {
-  console.log('api reached' + data)
   return $.ajax({
     url: config.apiOrigin + '/albums/',
     method: 'POST',
@@ -37,7 +35,6 @@ const createAlbum = function (data) {
 }
 
 const updateAlbum = function (data) {
-  console.log('api reached' + data)
   return $.ajax({
     url: config.apiOrigin + '/albums/' + data.album.id,
     method: 'PATCH',

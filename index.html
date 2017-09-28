@@ -15,6 +15,7 @@
     <body class="container-fluid">
 
       <h1 class="title">Records Record</h1>
+      <br>
       <div class="initial-hide">
 
         <button id="getAlbumsButton" class="btn btn-default">Your Albums.</button>
@@ -23,7 +24,7 @@
         <div id="content" class="content"></div>
 
       <br>
-
+      <h4 id="album-message"></h4>
       <button id="show-field-delete" class="btn btn-default">Remove an Album</button>
       <button id="show-field-create" class="btn btn-default">Add a new Album</button>
       <button id="show-field-update" class="btn btn-default">Update an Album</button>
@@ -94,10 +95,10 @@
 
       <p id='message'></p>
       <section id='auth'>
+
         <form id="sign-up" class='secondary-hide'>
           <fieldset>
             <h5>Sign up</h5>
-
             <input type="text" name="credentials[email]" placeholder="Input email">
             <input type="password" name="credentials[password]" placeholder="Input password">
             <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
@@ -105,26 +106,29 @@
           </fieldset>
         </form>
 
-        <h5 class='secondary-hide'>Sign In</h5>
 
-        <p id="siMessage"></p>
         <form id="sign-in" class='secondary-hide'>
+          <h5 class='secondary-hide'>Sign In</h5>
           <input type="text" name="credentials[email]" placeholder="Input email">
           <input type="password" name="credentials[password]" placeholder="Input password">
           <button type="submit" class="btn btn-success">Submit</button>
         </form>
-        <h5 class='initial-hide'>Change Password</h5>
 
-        <p id="cpwMessage"></p>
+
         <form id="change-password" class='initial-hide'>
+          <h5 class='initial-hide'>Change Password</h5>
           <input type="password" name="passwords[old]" placeholder="Input old password">
           <input type="password" name="passwords[new]" placeholder="Input new password">
           <button type="submit" class="btn btn-warning">Submit</button>
         </form>
+
         <form id="sign-out" class='initial-hide'>
-        <button type="submit" class="btn btn-danger">Sign out</button>
-        <p id="soMessage"></p>
+          <button type="submit" class="btn btn-danger">
+            Sign out
+          </button>
         </form>
+
       </section>
+
     </body>
   </html>

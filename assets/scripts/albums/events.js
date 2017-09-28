@@ -19,25 +19,20 @@ const onClearAlbums = (event) => {
 // submit form buttons
 const onDeleteAlbum = function (event) {
   const data = getFormFields(this)
-  console.log(data)
   event.preventDefault()
   api.deleteAlbum(data)
     .then(ui.deleteAlbumSuccess)
     .catch(ui.failure)
 }
 const onCreateAlbum = function (event) {
-  console.log(event)
   const data = getFormFields(this)
-  console.log(data)
   event.preventDefault()
   api.createAlbum(data)
     .then(ui.createAlbumSuccess)
     .catch(ui.failure)
 }
 const onUpdateAlbum = function (event) {
-  console.log(event)
   const data = getFormFields(this)
-  console.log(data)
   event.preventDefault()
   api.updateAlbum(data)
     .then(ui.updateAlbumSuccess)

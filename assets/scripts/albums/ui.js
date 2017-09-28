@@ -3,8 +3,6 @@
 const showAlbumsTemplate = require('../templates/album-listing.handlebars')
 
 const getAlbumsSuccess = (data) => {
-  console.log(data)
-  console.log(data.albums)
   const showAlbumsHtml = showAlbumsTemplate({ albums: data.albums })
   $('.content').append(showAlbumsHtml)
   $('#getAlbumsButton').attr('disabled', 'disabled')
@@ -16,26 +14,30 @@ const clearAlbums = () => {
 }
 
 const deleteAlbumSuccess = (data) => {
-  $('#delete-album').hide()
-  clearAlbums()
+  $('#album-message').show()
+  $('#album-message').text('Album deleted')
+  $('#album-message').fadeOut(2400)
+  $('input[type=text]').val('')
 }
 
 const createAlbumSuccess = (data) => {
-  console.log(data)
-  console.log(data.albums)
-  $('#create-album').hide()
-  clearAlbums()
+  $('#albummessage').show()
+  $('#album-message').text('Album added to collection')
+  $('#album-message').fadeOut(2400)
+  $('input[type=text]').val('')
 }
 
 const updateAlbumSuccess = (data) => {
-  console.log(data)
-  console.log(data.albums)
-  $('#update-album').hide()
-  clearAlbums()
+  $('#album-message').show()
+  $('#album-message').text('Album updated')
+  $('#album-message').fadeOut(2400)
+  $('input[type=text]').val('')
 }
 
 const failure = (error) => {
   console.error(error)
+  $('#album-message').show()
+  $('#album-message').text('Something went wrong')
 }
 
 module.exports = {
