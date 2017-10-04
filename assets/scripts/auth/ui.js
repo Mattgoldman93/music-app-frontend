@@ -1,6 +1,8 @@
 'use strict'
 const store = require('../store')
+const api = require('../albums/api.js')
 // const logic = require('../game/logic')
+
 const signUpSuccess = function (data) {
   $('#message').show()
   $('#message').text('Successfully signed up, go ahead and sign in!')
@@ -18,6 +20,7 @@ const signInSuccess = function (data) {
   store.user = data.user
   $('input[type=text]').val('')
   $('input[type=password]').val('')
+  api.getCheck()
 }
 
 const changePasswordSuccess = function (data) {
@@ -35,6 +38,7 @@ const signOutSuccess = function (data) {
   $('.secondary-hide').show()
   $('#message').fadeOut(1800)
   store.user = null
+  $('#content').hide()
 }
 
 const failure = function (error) {

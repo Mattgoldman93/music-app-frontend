@@ -3,6 +3,21 @@
 const store = require('../store.js')
 const config = require('../config')
 
+const getCheck = function () {
+  getAlbums()
+    .then(data => {
+      if (data.albums.length === 0) {
+        $('#getAlbumsHide').hide()
+        $('#content').hide()
+      } else {
+        $('#getAlbumsHide').show()
+        $('#content').show()
+        $('#getAlbumsButton').attr('disabled', false)
+      }
+    })
+    .catch(error => console.error(error))
+}
+
 const getAlbums = function () {
   return $.ajax({
     url: config.apiOrigin + '/albums',
@@ -49,5 +64,6 @@ module.exports = {
   getAlbums,
   deleteAlbum,
   createAlbum,
-  updateAlbum
+  updateAlbum,
+  getCheck
 }
