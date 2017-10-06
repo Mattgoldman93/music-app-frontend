@@ -11,10 +11,6 @@ const onGetAlbums = (event) => {
     .catch(ui.failure)
 }
 
-const onClearAlbums = (event) => {
-  event.preventDefault()
-  ui.clearAlbums()
-}
 
 // submit form buttons
 const onDeleteAlbum = function (event) {
@@ -58,7 +54,6 @@ const showFieldUpdate = function () {
 
 const addHandlers = () => {
   $('#getAlbumsButton').on('click', onGetAlbums)
-  $('#clearAlbumsButton').on('click', onClearAlbums)
   $('#show-field-delete').on('click', showFieldDelete)
   $('#show-field-create').on('click', showFieldCreate)
   $('#show-field-update').on('click', showFieldUpdate)
@@ -68,5 +63,6 @@ const addHandlers = () => {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onGetAlbums
 }
