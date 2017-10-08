@@ -11,6 +11,7 @@ $(() => {
   albumEvents.addHandlers()
   $('.initial-hide').hide()
   $('.table-hide').hide()
+  $('.clear-hide').hide()
 })
 
 // use require with a reference to bundle the file and use it in this file

@@ -10,8 +10,6 @@ const onGetAlbums = (event) => {
     .then(ui.getAlbumsSuccess)
     .catch(ui.failure)
 }
-
-
 // submit form buttons
 const onDeleteAlbum = function (event) {
   const data = getFormFields(this)
@@ -60,6 +58,7 @@ const addHandlers = () => {
   $('#update-album').on('submit', onUpdateAlbum)
   $('#create-album').on('submit', onCreateAlbum)
   $('#delete-album').on('submit', onDeleteAlbum)
+  $('#clear').on('click', ui.clearAlbums)
 }
 
 module.exports = {
